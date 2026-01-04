@@ -1,112 +1,93 @@
 /home/bodz/University/Semester_9/IoT/Project/RIOT/examples/basic/default/bin/native64/phydat/phydat_unix.o: \
  /home/bodz/University/Semester_9/IoT/Project/RIOT/sys/phydat/phydat_unix.c \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/stdc-predef.h \
+ /usr/include/stdc-predef.h \
  /home/bodz/University/Semester_9/IoT/Project/RIOT/examples/basic/default/bin/native64/riotbuild/riotbuild.h \
- /nix/store/kzq78n13l8w24jn8bx4djj79k5j717f1-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdint.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/stdint.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/libc-header-start.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/features.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/features-time64.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/wordsize.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/timesize.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/sys/cdefs.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/long-double.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/gnu/stubs.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/gnu/stubs-64.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/typesizes.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/time64.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/wchar.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdint-intn.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdint-uintn.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdint-least.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/math.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/math-vector.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/libm-simd-decl-stubs.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/floatn.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/floatn-common.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/flt-eval-method.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/fp-logb.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/fp-fast.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/mathcalls-helper-functions.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/mathcalls.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/mathcalls-narrow.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/iscanonical.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
+ /usr/include/features.h /usr/include/features-time64.h \
+ /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/bits/time64.h /usr/include/bits/wchar.h \
+ /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/bits/stdint-least.h /usr/include/math.h \
+ /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h \
  /home/bodz/University/Semester_9/IoT/Project/RIOT/sys/include/phydat.h \
- /nix/store/kzq78n13l8w24jn8bx4djj79k5j717f1-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stddef.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/sys/types.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/clock_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/clockid_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/time_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/timer_t.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
+ /usr/include/sys/types.h /usr/include/bits/types/clock_t.h \
+ /usr/include/bits/types/clockid_t.h /usr/include/bits/types/time_t.h \
+ /usr/include/bits/types/timer_t.h \
  /home/bodz/University/Semester_9/IoT/Project/RIOT/sys/include/endian.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/sys/select.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/select.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/sigset_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/__sigset_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/struct_timeval.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/struct_timespec.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/endian.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/endianness.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/pthreadtypes.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/thread-shared-types.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/pthreadtypes-arch.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/atomic_wide_counter.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/struct_mutex.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/struct_rwlock.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/struct_timeval.h \
+ /usr/include/bits/types/struct_timespec.h /usr/include/bits/endian.h \
+ /usr/include/bits/endianness.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/bits/thread-shared-types.h \
+ /usr/include/bits/pthreadtypes-arch.h \
+ /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
+ /usr/include/bits/struct_rwlock.h \
  /home/bodz/University/Semester_9/IoT/Project/RIOT/core/lib/include/modules.h
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/stdc-predef.h:
+/usr/include/stdc-predef.h:
 /home/bodz/University/Semester_9/IoT/Project/RIOT/examples/basic/default/bin/native64/riotbuild/riotbuild.h:
-/nix/store/kzq78n13l8w24jn8bx4djj79k5j717f1-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdint.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/stdint.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/libc-header-start.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/features.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/features-time64.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/wordsize.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/timesize.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/sys/cdefs.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/long-double.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/gnu/stubs.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/gnu/stubs-64.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/typesizes.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/time64.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/wchar.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdint-intn.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdint-uintn.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdint-least.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/math.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/math-vector.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/libm-simd-decl-stubs.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/floatn.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/floatn-common.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/flt-eval-method.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/fp-logb.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/fp-fast.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/mathcalls-helper-functions.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/mathcalls.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/mathcalls-narrow.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/iscanonical.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h:
+/usr/include/stdint.h:
+/usr/include/bits/libc-header-start.h:
+/usr/include/features.h:
+/usr/include/features-time64.h:
+/usr/include/bits/wordsize.h:
+/usr/include/bits/timesize.h:
+/usr/include/sys/cdefs.h:
+/usr/include/bits/long-double.h:
+/usr/include/gnu/stubs.h:
+/usr/include/gnu/stubs-64.h:
+/usr/include/bits/types.h:
+/usr/include/bits/typesizes.h:
+/usr/include/bits/time64.h:
+/usr/include/bits/wchar.h:
+/usr/include/bits/stdint-intn.h:
+/usr/include/bits/stdint-uintn.h:
+/usr/include/bits/stdint-least.h:
+/usr/include/math.h:
+/usr/include/bits/math-vector.h:
+/usr/include/bits/libm-simd-decl-stubs.h:
+/usr/include/bits/floatn.h:
+/usr/include/bits/floatn-common.h:
+/usr/include/bits/flt-eval-method.h:
+/usr/include/bits/fp-logb.h:
+/usr/include/bits/fp-fast.h:
+/usr/include/bits/mathcalls-macros.h:
+/usr/include/bits/mathcalls-helper-functions.h:
+/usr/include/bits/mathcalls.h:
+/usr/include/bits/mathcalls-narrow.h:
+/usr/include/bits/iscanonical.h:
 /home/bodz/University/Semester_9/IoT/Project/RIOT/sys/include/phydat.h:
-/nix/store/kzq78n13l8w24jn8bx4djj79k5j717f1-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stddef.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/sys/types.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/clock_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/clockid_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/time_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/timer_t.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
+/usr/include/sys/types.h:
+/usr/include/bits/types/clock_t.h:
+/usr/include/bits/types/clockid_t.h:
+/usr/include/bits/types/time_t.h:
+/usr/include/bits/types/timer_t.h:
 /home/bodz/University/Semester_9/IoT/Project/RIOT/sys/include/endian.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/sys/select.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/select.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/sigset_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/__sigset_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/struct_timeval.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/struct_timespec.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/endian.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/endianness.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/pthreadtypes.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/thread-shared-types.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/pthreadtypes-arch.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/atomic_wide_counter.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/struct_mutex.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/struct_rwlock.h:
+/usr/include/sys/select.h:
+/usr/include/bits/select.h:
+/usr/include/bits/types/sigset_t.h:
+/usr/include/bits/types/__sigset_t.h:
+/usr/include/bits/types/struct_timeval.h:
+/usr/include/bits/types/struct_timespec.h:
+/usr/include/bits/endian.h:
+/usr/include/bits/endianness.h:
+/usr/include/bits/pthreadtypes.h:
+/usr/include/bits/thread-shared-types.h:
+/usr/include/bits/pthreadtypes-arch.h:
+/usr/include/bits/atomic_wide_counter.h:
+/usr/include/bits/struct_mutex.h:
+/usr/include/bits/struct_rwlock.h:
 /home/bodz/University/Semester_9/IoT/Project/RIOT/core/lib/include/modules.h:

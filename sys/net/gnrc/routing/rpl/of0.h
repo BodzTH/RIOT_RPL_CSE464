@@ -28,22 +28,6 @@
 extern "C" {
 #endif
 
-/*
- * ============================================================================
- * DEBUGGING / INTEGRATION CONFIGURATION
- * ============================================================================
- *
- * Set DEBUGGING to 1 for standalone testing (uses local is_critical variable)
- * Set DEBUGGING to 0 for integration with Team A's data priority module
- *
- * When DEBUGGING == 0:
- *   - Team A (Data Priority Team) must define the is_critical variable
- *   - Include this header in the data priority monitoring module
- *   - Update is_critical based on sensor readings (moisture & temperature)
- *
- * ============================================================================
- */
-#define DEBUGGING (1)
 
 /**
  * @brief   Data priority critical state flag for RPL rank calculation
@@ -72,7 +56,7 @@ extern "C" {
  *   - Team A (Data Priority Team): Controls this variable based on sensor readings
  *   - Member 2 (The Developer): Uses this variable in calc_rank() function
  */
-extern bool is_critical;
+extern volatile bool is_critical;
 
 /**
  * @brief   Return the address to the OF0 objective function

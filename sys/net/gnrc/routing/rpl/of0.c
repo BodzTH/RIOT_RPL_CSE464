@@ -74,11 +74,24 @@
  *   - Moisture readings:     Critical if <20% or >80%
  *   - Temperature readings: Critical if <10°C or >35°C
  *
- * When DEBUGGING is enabled (in of0.h), a local variable is used for testing.
- * When DEBUGGING is disabled, the variable must be defined by Team A's
- * data priority monitoring module.
- *
  * ============================================================================ */
+
+/*
+ * ============================================================================
+ * DEBUGGING / INTEGRATION CONFIGURATION
+ * ============================================================================
+ *
+ * Set DEBUGGING to 1 for standalone testing (uses local is_critical variable)
+ * Set DEBUGGING to 0 for integration with Team A's data priority module
+ *
+ * When DEBUGGING == 0:
+ *   - Team A (Data Priority Team) must define the is_critical variable
+ *   - Include this header in the data priority monitoring module
+ *   - Update is_critical based on sensor readings (moisture & temperature)
+ *
+ * ============================================================================
+ */
+#define DEBUGGING (TRUE)
 
 #if DEBUGGING
 /**
@@ -91,7 +104,7 @@
  *   - Moisture:    Critical if <20% or >80%
  *   - Temperature: Critical if <10°C or >35°C
  */
-bool is_critical = TRUE;
+bool volatile is_critical = TRUE;
 #endif /* DEBUGGING */
 
 /* ============================================================================

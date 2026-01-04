@@ -1,116 +1,94 @@
 /home/bodz/University/Semester_9/IoT/Project/RIOT/examples/basic/default/bin/native64/core_lib/atomic_c11.o: \
  /home/bodz/University/Semester_9/IoT/Project/RIOT/core/lib/atomic_c11.c \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/stdc-predef.h \
+ /usr/include/stdc-predef.h \
  /home/bodz/University/Semester_9/IoT/Project/RIOT/examples/basic/default/bin/native64/riotbuild/riotbuild.h \
- /nix/store/kzq78n13l8w24jn8bx4djj79k5j717f1-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stddef.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/stdlib.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/libc-header-start.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/features.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/features-time64.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/wordsize.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/timesize.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/sys/cdefs.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/long-double.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/gnu/stubs.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/gnu/stubs-64.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/waitflags.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/waitstatus.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/floatn.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/floatn-common.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/locale_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/__locale_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/sys/types.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/typesizes.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/time64.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/clock_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/clockid_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/time_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/timer_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdint-intn.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h \
+ /usr/include/stdlib.h /usr/include/bits/libc-header-start.h \
+ /usr/include/features.h /usr/include/features-time64.h \
+ /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
+ /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
+ /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
+ /usr/include/bits/types/clock_t.h /usr/include/bits/types/clockid_t.h \
+ /usr/include/bits/types/time_t.h /usr/include/bits/types/timer_t.h \
+ /usr/include/bits/stdint-intn.h \
  /home/bodz/University/Semester_9/IoT/Project/RIOT/sys/include/endian.h \
- /nix/store/kzq78n13l8w24jn8bx4djj79k5j717f1-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdint.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/stdint.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/wchar.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdint-uintn.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdint-least.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/sys/select.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/select.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/sigset_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/__sigset_t.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/struct_timeval.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/struct_timespec.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/endian.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/endianness.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/pthreadtypes.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/thread-shared-types.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/pthreadtypes-arch.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/atomic_wide_counter.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/struct_mutex.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/struct_rwlock.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/alloca.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdlib-bsearch.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdlib-float.h \
- /nix/store/kzq78n13l8w24jn8bx4djj79k5j717f1-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdbool.h \
- /nix/store/kzq78n13l8w24jn8bx4djj79k5j717f1-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdatomic.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/string.h \
- /nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/strings.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h \
+ /usr/include/bits/stdint-uintn.h /usr/include/bits/stdint-least.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/struct_timeval.h \
+ /usr/include/bits/types/struct_timespec.h /usr/include/bits/endian.h \
+ /usr/include/bits/endianness.h /usr/include/bits/pthreadtypes.h \
+ /usr/include/bits/thread-shared-types.h \
+ /usr/include/bits/pthreadtypes-arch.h \
+ /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
+ /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdatomic.h \
+ /usr/include/string.h /usr/include/strings.h \
  /home/bodz/University/Semester_9/IoT/Project/RIOT/core/lib/include/irq.h \
  /home/bodz/University/Semester_9/IoT/Project/RIOT/cpu/native/include/cpu_conf.h
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/stdc-predef.h:
+/usr/include/stdc-predef.h:
 /home/bodz/University/Semester_9/IoT/Project/RIOT/examples/basic/default/bin/native64/riotbuild/riotbuild.h:
-/nix/store/kzq78n13l8w24jn8bx4djj79k5j717f1-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stddef.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/stdlib.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/libc-header-start.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/features.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/features-time64.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/wordsize.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/timesize.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/sys/cdefs.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/long-double.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/gnu/stubs.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/gnu/stubs-64.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/waitflags.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/waitstatus.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/floatn.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/floatn-common.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/locale_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/__locale_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/sys/types.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/typesizes.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/time64.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/clock_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/clockid_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/time_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/timer_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdint-intn.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
+/usr/include/stdlib.h:
+/usr/include/bits/libc-header-start.h:
+/usr/include/features.h:
+/usr/include/features-time64.h:
+/usr/include/bits/wordsize.h:
+/usr/include/bits/timesize.h:
+/usr/include/sys/cdefs.h:
+/usr/include/bits/long-double.h:
+/usr/include/gnu/stubs.h:
+/usr/include/gnu/stubs-64.h:
+/usr/include/bits/waitflags.h:
+/usr/include/bits/waitstatus.h:
+/usr/include/bits/floatn.h:
+/usr/include/bits/floatn-common.h:
+/usr/include/bits/types/locale_t.h:
+/usr/include/bits/types/__locale_t.h:
+/usr/include/sys/types.h:
+/usr/include/bits/types.h:
+/usr/include/bits/typesizes.h:
+/usr/include/bits/time64.h:
+/usr/include/bits/types/clock_t.h:
+/usr/include/bits/types/clockid_t.h:
+/usr/include/bits/types/time_t.h:
+/usr/include/bits/types/timer_t.h:
+/usr/include/bits/stdint-intn.h:
 /home/bodz/University/Semester_9/IoT/Project/RIOT/sys/include/endian.h:
-/nix/store/kzq78n13l8w24jn8bx4djj79k5j717f1-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdint.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/stdint.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/wchar.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdint-uintn.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdint-least.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/sys/select.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/select.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/sigset_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/__sigset_t.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/struct_timeval.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/types/struct_timespec.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/endian.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/endianness.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/pthreadtypes.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/thread-shared-types.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/pthreadtypes-arch.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/atomic_wide_counter.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/struct_mutex.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/struct_rwlock.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/alloca.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdlib-bsearch.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/bits/stdlib-float.h:
-/nix/store/kzq78n13l8w24jn8bx4djj79k5j717f1-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdbool.h:
-/nix/store/kzq78n13l8w24jn8bx4djj79k5j717f1-gcc-14.3.0/lib/gcc/x86_64-unknown-linux-gnu/14.3.0/include/stdatomic.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/string.h:
-/nix/store/gi4cz4ir3zlwhf1azqfgxqdnczfrwsr7-glibc-2.40-66-dev/include/strings.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h:
+/usr/include/stdint.h:
+/usr/include/bits/wchar.h:
+/usr/include/bits/stdint-uintn.h:
+/usr/include/bits/stdint-least.h:
+/usr/include/sys/select.h:
+/usr/include/bits/select.h:
+/usr/include/bits/types/sigset_t.h:
+/usr/include/bits/types/__sigset_t.h:
+/usr/include/bits/types/struct_timeval.h:
+/usr/include/bits/types/struct_timespec.h:
+/usr/include/bits/endian.h:
+/usr/include/bits/endianness.h:
+/usr/include/bits/pthreadtypes.h:
+/usr/include/bits/thread-shared-types.h:
+/usr/include/bits/pthreadtypes-arch.h:
+/usr/include/bits/atomic_wide_counter.h:
+/usr/include/bits/struct_mutex.h:
+/usr/include/bits/struct_rwlock.h:
+/usr/include/alloca.h:
+/usr/include/bits/stdlib-bsearch.h:
+/usr/include/bits/stdlib-float.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdbool.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdatomic.h:
+/usr/include/string.h:
+/usr/include/strings.h:
 /home/bodz/University/Semester_9/IoT/Project/RIOT/core/lib/include/irq.h:
 /home/bodz/University/Semester_9/IoT/Project/RIOT/cpu/native/include/cpu_conf.h:
