@@ -12,11 +12,14 @@
  * @ingroup     net_gnrc_rpl
  * @{
  * @file
- * @brief       Objective Function Zero.
+ * @brief       Objective Function Zero with Data Priority-Aware Routing Extension.
  *
- * Header-file, which defines all functions for the implementation of Objective Function Zero.
+ * Header file which defines all functions for the implementation of Objective Function Zero.
+ * This implementation includes a data priority-aware extension that modifies rank
+ * calculation based on sensor data criticality (moisture and temperature readings).
  *
  * @author      Eric Engel <eric.engel@fu-berlin.de>
+ * @author      CSE464 Team - Task Group 1 (RPL Objective Function Optimization)
  */
 
 #include "net/gnrc/rpl/structs.h"
@@ -25,55 +28,56 @@
 extern "C" {
 #endif
 
-
 /*
  * ============================================================================
  * DEBUGGING / INTEGRATION CONFIGURATION
  * ============================================================================
  *
  * Set DEBUGGING to 1 for standalone testing (uses local is_critical variable)
- * Set DEBUGGING to 0 for integration with battery monitoring module
+ * Set DEBUGGING to 0 for integration with Team A's data priority module
  *
  * When DEBUGGING == 0:
- *   - The battery monitoring team (Member 1) must define is_critical variable
- *   - Include this header in your battery monitoring module
- *   - Update is_critical based on battery level thresholds
+ *   - Team A (Data Priority Team) must define the is_critical variable
+ *   - Include this header in the data priority monitoring module
+ *   - Update is_critical based on sensor readings (moisture & temperature)
  *
  * ============================================================================
  */
 #define DEBUGGING (1)
 
 /**
- * @brief   Battery critical state flag for RPL rank calculation
+ * @brief   Data priority critical state flag for RPL rank calculation
  *
- * This flag controls the behavior of the calc_rank() function in of0.c:
+ * This flag controls the behavior of the calc_rank() function in of0.c.
+ * It is SET by Team A based on sensor data priority logic:
  *
- * - When TRUE:   Node is in battery-critical state
- *               Rank is increased using:  link_metric * min_hop_rank_inc
- *               This makes the node less attractive as a routing parent
+ * DATA PRIORITY LOGIC (controlled by Team A):
+ * -------------------------------------------
  *
- * - When FALSE: Node has normal battery level
- *               Rank uses standard OF0: min_hop_rank_inc
+ *   MOISTURE LEVEL:
+ *     - Critical (<20% or >80%)  -> High Priority Alert     -> is_critical = TRUE
+ *     - Normal (20% - 80%)       -> Normal Priority         -> is_critical = FALSE
+ *
+ *   TEMPERATURE LEVEL:
+ *     - Critical (<10°C or >35°C) -> Urgent Priority (ACK needed) -> is_critical = TRUE
+ *     - Normal (10°C - 35°C)      -> Normal Priority              -> is_critical = FALSE
+ *
+ * EFFECT ON ROUTING:
+ * ------------------
+ * - When TRUE:   Critical sensor data detected, use link_metric * min_hop_rank_inc
+ *               for more reliable routing of high-priority data
+ * - When FALSE: Normal sensor data, use standard OF0 rank calculation
  *
  * OWNERSHIP:
- *   - Member 1 (The Analyst): Controls this variable via battery monitoring logic
+ *   - Team A (Data Priority Team): Controls this variable based on sensor readings
  *   - Member 2 (The Developer): Uses this variable in calc_rank() function
- *
- * INTEGRATION:
- *   When battery monitoring code is ready, set DEBUGGING to 0 and define
- *   is_critical in your battery monitoring module.
  */
-#if DEBUGGING
-    extern bool is_critical;
-#else
-    extern volatile bool is_critical;
-#endif /* DEBUGGING */
-
+extern bool is_critical;
 
 /**
- * @brief   Return the address to the of0 objective function
+ * @brief   Return the address to the OF0 objective function
  *
- * @return  Address of the of0 objective function
+ * @return  Address of the OF0 objective function
  */
 gnrc_rpl_of_t *gnrc_rpl_get_of0(void);
 

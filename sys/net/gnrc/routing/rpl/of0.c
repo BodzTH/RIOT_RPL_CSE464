@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Oliver Hahm <oliver. hahm@inria.fr>
+ * Copyright (C) 2014 Oliver Hahm <oliver.hahm@inria.fr>
  *
  * This file is subject to the terms and conditions of the GNU Lesser
  * General Public License v2.1. See the file LICENSE in the top level
@@ -10,30 +10,40 @@
  * @ingroup     net_gnrc_rpl
  * @{
  * @file
- * @brief       Objective Function Zero with Battery-Aware Routing Extension.
+ * @brief       Objective Function Zero with Data Priority-Aware Routing Extension.
  *
  * Implementation of Objective Function Zero (OF0) as defined in RFC 6552.
- * This implementation includes a battery-aware extension that modifies rank
- * calculation based on the node's battery state, enabling energy-efficient
- * routing in Low-Power and Lossy Networks (LLNs).
+ * This implementation includes a data priority-aware extension that modifies rank
+ * calculation based on sensor data criticality, enabling priority-based routing
+ * in Low-Power and Lossy Networks (LLNs).
  *
  * MODIFICATION SUMMARY (CSE464 - Task Group 1):
  * ---------------------------------------------
  * The standard OF0 calculates rank as:
  *     rank = parent_rank + min_hop_rank_inc
  *
- * The battery-aware modification calculates rank as:
- *     - Normal state:    rank = parent_rank + min_hop_rank_inc
- *     - Critical state:  rank = parent_rank + (link_metric * min_hop_rank_inc)
+ * The data priority-aware modification calculates rank as:
+ *     - Normal priority:    rank = parent_rank + min_hop_rank_inc
+ *     - Critical priority: rank = parent_rank + (link_metric * min_hop_rank_inc)
  *
- * When a node's battery is critically low, its rank increases significantly,
- * causing other nodes to prefer alternate parents. This preserves battery
- * life on low-energy nodes by reducing their routing responsibilities.
+ * When sensor data indicates critical conditions (abnormal moisture or temperature),
+ * the rank calculation uses link_metric to factor in link quality, ensuring more
+ * reliable routing paths for high-priority sensor data.
+ *
+ * DATA PRIORITY CONDITIONS (controlled by Team A):
+ * ------------------------------------------------
+ *   MOISTURE LEVEL:
+ *     - Critical:  <20% or >80%  -> High Priority Alert
+ *     - Normal:    20% - 80%     -> Normal Priority
+ *
+ *   TEMPERATURE LEVEL:
+ *     - Critical: <10°C or >35°C -> Urgent Priority (ACK needed)
+ *     - Normal:   10°C - 35°C    -> Normal Priority
  *
  * REFERENCES:
- * - RFC 6550: RPL Protocol Specification (https://datatracker.ietf.org/doc/html/rfc6550)
+ * - RFC 6550:  RPL Protocol Specification (https://datatracker.ietf.org/doc/html/rfc6550)
  * - RFC 6552: OF0 Specification (https://datatracker.ietf.org/doc/html/rfc6552)
- * - RIOT GNRC RPL:  https://api.riot-os. org/group__net__gnrc__rpl.html
+ * - RIOT GNRC RPL:  https://api.riot-os.org/group__net__gnrc__rpl.html
  *
  * @author      Eric Engel <eric.engel@fu-berlin.de>
  * @author      CSE464 Team - Member 2 (The Developer)
@@ -42,7 +52,7 @@
 
 #include <string.h>
 #include "of0.h"
-#include "net/gnrc/rpl. h"
+#include "net/gnrc/rpl.h"
 #include "net/gnrc/rpl/structs.h"
 
 /* ============================================================================
@@ -53,27 +63,35 @@
 #define FALSE (0)
 
 /* ============================================================================
- * BATTERY-AWARE ROUTING STATE
+ * DATA PRIORITY STATE
  * ============================================================================
  *
  * The is_critical flag is the interface between:
- *   - Member 1 (Analyst): Battery monitoring logic that SETS this flag
+ *   - Team A (Data Priority Team): Sensor monitoring logic that SETS this flag
  *   - Member 2 (Developer): Rank calculation that READS this flag
  *
+ * Team A sets is_critical based on:
+ *   - Moisture readings:     Critical if <20% or >80%
+ *   - Temperature readings: Critical if <10°C or >35°C
+ *
  * When DEBUGGING is enabled (in of0.h), a local variable is used for testing.
- * When DEBUGGING is disabled, the variable must be defined by the battery
- * monitoring module (Member 1's responsibility).
+ * When DEBUGGING is disabled, the variable must be defined by Team A's
+ * data priority monitoring module.
  *
  * ============================================================================ */
 
 #if DEBUGGING
-    /**
-     * @brief   Local is_critical variable for testing purposes
-     *
-     * Set to TRUE to simulate battery-critical state (high rank penalty)
-     * Set to FALSE to simulate normal battery state (standard OF0)
-     */
-    bool is_critical = TRUE;
+/**
+ * @brief   Local is_critical variable for testing purposes
+ *
+ * Set to TRUE to simulate critical sensor data (high priority routing)
+ * Set to FALSE to simulate normal sensor data (standard OF0)
+ *
+ * In production, this is controlled by Team A based on:
+ *   - Moisture:    Critical if <20% or >80%
+ *   - Temperature: Critical if <10°C or >35°C
+ */
+bool is_critical = TRUE;
 #endif /* DEBUGGING */
 
 /* ============================================================================
@@ -96,14 +114,14 @@ static void reset(gnrc_rpl_dodag_t *);
  * OCP (Objective Code Point) = 0x0 identifies this as OF0 per RFC 6552.
  */
 static gnrc_rpl_of_t gnrc_rpl_of0 = {
-    .ocp                    = 0x0,          /**< Objective Code Point for OF0 */
-    .calc_rank              = calc_rank,    /**< Rank calculation function */
-    . parent_cmp             = parent_cmp,   /**< Parent comparison function */
-    .which_dodag            = which_dodag,  /**< DODAG comparison function */
-    . reset                  = reset,        /**< Reset function */
-    . parent_state_callback  = NULL,         /**< Parent state callback (unused) */
-    .init                   = NULL,         /**< Initialization function (unused) */
-    .process_dio            = NULL          /**< DIO processing callback (unused) */
+    .ocp                    = 0x0,
+    .calc_rank              = calc_rank,
+    .parent_cmp             = parent_cmp,
+    .which_dodag            = which_dodag,
+    .reset                  = reset,
+    .parent_state_callback  = NULL,
+    .init                   = NULL,
+    .process_dio            = NULL
 };
 
 /**
@@ -130,36 +148,42 @@ void reset(gnrc_rpl_dodag_t *dodag)
 }
 
 /* ============================================================================
- * RANK CALCULATION - BATTERY-AWARE MODIFICATION
+ * RANK CALCULATION - DATA PRIORITY-AWARE MODIFICATION
  * ============================================================================ */
 
 /**
- * @brief   Calculate node rank with battery-aware optimization
+ * @brief   Calculate node rank with data priority-aware optimization
  *
- * This function implements the core battery-aware routing logic.  It calculates
+ * This function implements the core data priority-aware routing logic.  It calculates
  * the node's rank based on the parent's rank and adjusts the rank increase
- * depending on the battery state.
+ * depending on the sensor data priority state (is_critical flag set by Team A).
  *
  * ALGORITHM:
  * ----------
  * 1. If base_rank is 0, use the preferred parent's rank
- * 2. Calculate rank addition based on battery state:
+ * 2. Calculate rank addition based on data priority state:
  *
- *    NORMAL MODE (is_critical == FALSE):
+ *    NORMAL PRIORITY (is_critical == FALSE):
+ *        Sensor data is within normal ranges:
+ *          - Moisture: 20% - 80%
+ *          - Temperature: 10°C - 35°C
  *        add = min_hop_rank_inc
  *        (Standard OF0 behavior per RFC 6552)
  *
- *    CRITICAL MODE (is_critical == TRUE):
+ *    CRITICAL PRIORITY (is_critical == TRUE):
+ *        Sensor data indicates critical conditions:
+ *          - Moisture: <20% or >80% (High Priority Alert)
+ *          - Temperature: <10°C or >35°C (Urgent Priority, ACK needed)
  *        add = link_metric * min_hop_rank_inc
- *        (Battery-aware extension - higher rank = less preferred)
+ *        (Factors in link quality for reliable high-priority data routing)
  *
  * 3. Check for overflow and return final rank
  *
  * EXAMPLE:
  * --------
- * With min_hop_rank_inc = 256 and link_metric = 2. 0:
- *   - Normal mode:    add = 256         → Lower rank, preferred as parent
- *   - Critical mode:  add = 2. 0 * 256 = 512 → Higher rank, avoided as parent
+ * With min_hop_rank_inc = 256 and link_metric = 2.0:
+ *   - Normal priority:    add = 256             -> Standard routing
+ *   - Critical priority:  add = 2.0 * 256 = 512 -> Link-quality aware routing
  *
  * @param[in] dodag         Pointer to the DODAG structure
  * @param[in] base_rank     Base rank for calculation (0 = use parent's rank)
@@ -185,22 +209,23 @@ uint16_t calc_rank(gnrc_rpl_dodag_t *dodag, uint16_t base_rank)
     }
 
     /*
-     * Step 2: Calculate rank addition based on battery state
-     * This is where the battery-aware modification takes effect.
+     * Step 2: Calculate rank addition based on data priority state
+     * The is_critical flag is controlled by Team A based on sensor readings.
      */
     uint16_t add;
 
     if (dodag->parents != NULL) {
         if (is_critical) {
             /*
-             * BATTERY CRITICAL MODE:
-             * ----------------------
-             * When the node's battery is critically low, we increase the rank
-             * by multiplying link_metric with min_hop_rank_inc.
+             * CRITICAL DATA PRIORITY MODE:
+             * ----------------------------
+             * Team A has detected critical sensor conditions:
+             *   - Moisture <20% or >80% (High Priority Alert)
+             *   - Temperature <10°C or >35°C (Urgent Priority, ACK needed)
              *
-             * Effect: Higher rank makes this node less attractive as a parent,
-             * causing child nodes to select alternate parents with lower ranks.
-             * This reduces routing load on the low-battery node.
+             * When sensor data is critical, we factor in link_metric to ensure
+             * the routing path considers link quality.  This provides more
+             * reliable routing for high-priority sensor data.
              *
              * Formula: add = link_metric * min_hop_rank_inc
              */
@@ -208,12 +233,15 @@ uint16_t calc_rank(gnrc_rpl_dodag_t *dodag, uint16_t base_rank)
         }
         else {
             /*
-             * NORMAL MODE (Standard OF0):
-             * ---------------------------
-             * When battery is normal, use the standard OF0 rank calculation
-             * as defined in RFC 6552.
+             * NORMAL DATA PRIORITY MODE (Standard OF0):
+             * -----------------------------------------
+             * Sensor data is within normal ranges:
+             *   - Moisture: 20% - 80%
+             *   - Temperature: 10°C - 35°C
              *
-             * Formula:  add = min_hop_rank_inc (typically 256)
+             * Use standard OF0 rank calculation as defined in RFC 6552.
+             *
+             * Formula: add = min_hop_rank_inc (typically 256)
              */
             add = dodag->instance->min_hop_rank_inc;
         }
@@ -221,7 +249,6 @@ uint16_t calc_rank(gnrc_rpl_dodag_t *dodag, uint16_t base_rank)
     else {
         /*
          * No parent available - use default minimum hop rank increase.
-         * This is a fallback for edge cases.
          */
         add = CONFIG_GNRC_RPL_DEFAULT_MIN_HOP_RANK_INCREASE;
     }
@@ -235,7 +262,6 @@ uint16_t calc_rank(gnrc_rpl_dodag_t *dodag, uint16_t base_rank)
         return GNRC_RPL_INFINITE_RANK;
     }
 
-    /* Return final calculated rank */
     return base_rank + add;
 }
 
@@ -246,7 +272,6 @@ uint16_t calc_rank(gnrc_rpl_dodag_t *dodag, uint16_t base_rank)
 /**
  * @brief   Compare two parents to determine preference
  *
- * This function is used by the RPL stack to order the parent list.
  * Parents with lower rank are preferred (appear first in the list).
  *
  * @param[in] parent1   First parent to compare
@@ -259,12 +284,12 @@ uint16_t calc_rank(gnrc_rpl_dodag_t *dodag, uint16_t base_rank)
 int parent_cmp(gnrc_rpl_parent_t *parent1, gnrc_rpl_parent_t *parent2)
 {
     if (parent1->rank < parent2->rank) {
-        return -1;  /* parent1 preferred */
+        return -1;
     }
     else if (parent1->rank > parent2->rank) {
-        return 1;   /* parent2 preferred */
+        return 1;
     }
-    return 0;       /* equal preference */
+    return 0;
 }
 
 /* ============================================================================
@@ -274,9 +299,7 @@ int parent_cmp(gnrc_rpl_parent_t *parent1, gnrc_rpl_parent_t *parent2)
 /**
  * @brief   Compare current DODAG with a DODAG advertised in a DIO message
  *
- * This function implements DODAG selection criteria as per RFC 6552 Section 4.2.
- * It determines whether to stay with the current DODAG or switch to the one
- * advertised in the received DIO message.
+ * Implements DODAG selection criteria as per RFC 6552 Section 4.2.
  *
  * SELECTION CRITERIA (in order of priority):
  * 1. Parent set must not be empty
@@ -301,34 +324,34 @@ int which_dodag(gnrc_rpl_dodag_t *d1, gnrc_rpl_dio_t *dio)
 
     /* Criterion 1: Parent set must not be empty */
     if ((d1->node_status != GNRC_RPL_ROOT_NODE) && !d1->parents) {
-        return 1;   /* Prefer DIO's DODAG - current has no parents */
+        return 1;
     }
 
     /* Criterion 2: Prefer grounded DODAG */
     int dio_grounded = dio->g_mop_prf >> GNRC_RPL_GROUNDED_SHIFT;
     if (d1->grounded > dio_grounded) {
-        return -1;  /* Current DODAG is grounded, prefer it */
+        return -1;
     }
     else if (dio_grounded > d1->grounded) {
-        return 1;   /* DIO's DODAG is grounded, prefer it */
+        return 1;
     }
 
     /* Criterion 3: Prefer DODAG with higher preference */
     int dio_prf = dio->g_mop_prf & GNRC_RPL_PRF_MASK;
     if (d1->prf > dio_prf) {
-        return -1;  /* Current DODAG has higher preference */
+        return -1;
     }
     else if (dio_prf > d1->prf) {
-        return 1;   /* DIO's DODAG has higher preference */
+        return 1;
     }
 
     /* Criterion 4: Prefer DODAG with more recent version */
     if (ipv6_addr_equal(&d1->dodag_id, &dio->dodag_id)) {
         if (GNRC_RPL_COUNTER_GREATER_THAN(d1->version, dio->version_number)) {
-            return -1;  /* Current version is newer */
+            return -1;
         }
         else if (GNRC_RPL_COUNTER_GREATER_THAN(dio->version_number, d1->version)) {
-            return 1;   /* DIO's version is newer */
+            return 1;
         }
     }
 
@@ -336,16 +359,16 @@ int which_dodag(gnrc_rpl_dodag_t *d1, gnrc_rpl_dio_t *dio)
     int d1_rank = d1->parents->rank;
     int d2_rank = byteorder_ntohs(dio->rank);
     if (d1_rank < d2_rank) {
-        return -1;  /* Current DODAG has lower rank */
+        return -1;
     }
     else if (d2_rank < d1_rank) {
-        return 1;   /* DIO's DODAG has lower rank */
+        return 1;
     }
 
     /* Criterion 6: Prefer DODAG with alternate parents */
     if (d1->parents->next) {
-        return -1;  /* Current DODAG has alternate parents */
+        return -1;
     }
 
-    return 0;   /* Equal preference */
+    return 0;
 }
